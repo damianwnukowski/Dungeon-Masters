@@ -1653,8 +1653,8 @@ TextureImporter:
       name: tileset_85
       rect:
         serializedVersion: 2
-        x: 80
-        y: 160
+        x: 102
+        y: 156
         width: 16
         height: 16
       alignment: 0
@@ -2373,8 +2373,8 @@ TextureImporter:
       name: tileset_121
       rect:
         serializedVersion: 2
-        x: 144
-        y: 128
+        x: 70
+        y: 135
         width: 16
         height: 16
       alignment: 0
