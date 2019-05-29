@@ -1,16 +1,21 @@
 # Dungeon Masters
-Projekt gry komputerowej bêd¹cej prac¹ zaliczeniow¹ z przedmiotu Programowanie Gier studentów informatyki stacjonarnej pierwszego stopnia w roku 2018/19.
+Projekt gry komputerowej bÃªdÂ¹cej pracÂ¹ zaliczeniowÂ¹ z przedmiotu Programowanie Gier studentÃ³w informatyki stacjonarnej pierwszego stopnia w roku 2018/19.
 
 
 ## Opis gry
 
-Dungeon Masters jest to przygodowa gra 2D w której wcielamy siê w poszukiwacza skarbów który penetruje coraz to g³êbsze poziomy jaskiñ pokonuj¹c przy tym niebezpiecznych przeciwników. W grze naszym celem jest dotarcie do koñca poziomu zdobywaj¹c przy tym jak najwiêcej skarbów a co najwa¿niejsze uchodz¹c przy tym z ¿yciem. Do dyspozycji gracza bêd¹ ró¿nego rodzaju bronie które pozwol¹ mu zg³adziæ kolejne hordy potworów w zwarciu jak i na dystans.
+Celem gracza w Dungeon Masters jest jak najdÅ‚uÅ¼sze przetrwanie w klasztorze, ktÃ³ry atakowany jest przez hordy przeciwnikÃ³w atakujÄ…cych klasztor ze wszystkich stron. DysponujÄ…cy mieczem gracz ma za zadanie zabiÄ‡ jak najwiÄ™cej wrogÃ³w zanim Ci zdÄ…Å¼Ä… go zabiÄ‡ na Å›mierÄ‡ (xd). Poniesione rany w walce Gracz moÅ¼e wyleczyÄ‡ za pomocÄ… magicznych ziÃ³Å‚ dostÄ™pnych u jedynego ocalaÅ‚ego kapÅ‚ana wewnÄ…trz klasztoru po okazyjnej cenie. StrzeÅ¼cie siÄ™, albowiem hordy przeciwnikÃ³w zdajÄ… siÄ™ nie mieÄ‡ koÅ„ca...
 
 ## Kamienie milowe
 
-Gra powstawaæ bêdzie wed³ug nastêpuj¹cych kroków:
+Gra powstawaÃ¦ bÃªdzie wedÂ³ug nastÃªpujÂ¹cych krokÃ³w:
 
-- Stworzenie pierwszego poziomu, bohatera jak i przeciwników. Opracowanie sposobu poruszania siê jednostek i cech jakie bêd¹ one posiadaæ.
-- Dodanie do gry pierwszej funkcjonalnej broni.
-- Rozwój ruchu bohatera jak i broni które mo¿na w grze u¿ywaæ. Interakcja ze œwiatem, rozbudowanie œwiata gry.
-- Stworzenie ciekawej otoczki fabularnej i dodatkowych celów gracza.
+- Stworzenie planszy w 2D.
+- Stworzenie postaci gracza.
+- Nadanie graczowi cech umoÅ¼liwiajÄ…cych mu atakowanie i poruszanie siÄ™ po mapie.
+- Stworzenie dynamicznej kamery podÄ…Å¼ajÄ…cej za bohaterem.
+- Stworzenie modelu przeciwnika.
+- Nadanie bohaterowi punktÃ³w Å¼ycia oraz mechanizmu otrzymywania i leczenia obraÅ¼eÅ„.
+- Stworzenie mechanizmu zadawania obraÅ¼eÅ„ przez jednostki. 
+- Dodanie zÅ‚ota w grze, sposobÃ³w zdobywania go oraz moÅ¼liwoÅ›ci leczenia za pieniÄ…dze w klaszorze.
+- SprzedaÅ¼ projektu dla Google za miliony i wyjazd do ciepÅ‚ych krajÃ³w.
