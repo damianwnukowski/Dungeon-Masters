@@ -1,5 +1,5 @@
 # Dungeon Masters
-Projekt gry komputerowej bêd¹cej prac¹ zaliczeniow¹ z przedmiotu Programowanie Gier studentów informatyki stacjonarnej pierwszego stopnia w roku 2018/19.
+Projekt gry komputerowej będącej pracą zaliczeniową z przedmiotu Programowanie Gier studentów informatyki stacjonarnej pierwszego stopnia w roku 2018/19.
 
 
 ## Opis gry
@@ -8,7 +8,7 @@ Celem gracza w Dungeon Masters jest jak najdłuższe przetrwanie w klasztorze, k
 
 ## Kamienie milowe
 
-Gra powstawaæ bêdzie wed³ug nastêpuj¹cych kroków:
+Gra powstawać będzie według następujących kroków:
 
 - Stworzenie planszy w 2D.
 - Stworzenie postaci gracza.
@@ -19,3 +19,4 @@ Gra powstawaæ bêdzie wed³ug nastêpuj¹cych kroków:
 - Stworzenie mechanizmu zadawania obrażeń przez jednostki. 
 - Dodanie złota w grze, sposobów zdobywania go oraz możliwości leczenia za pieniądze w klaszorze.
 - Sprzedaż projektu dla Google za miliony i wyjazd do ciepłych krajów.
+- Otrzymanie pozytywnej oceny z przedmiotu.
