@@ -38,14 +38,15 @@ public class simpleEnemyBehaviour : MonoBehaviour
         transform.position = new Vector2(transform.position.x + (movementPerSecond.x * Time.deltaTime),
         transform.position.y + (movementPerSecond.y * Time.deltaTime));
 
-    }
-
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        Debug.Log(col.gameObject.tag);
-        if (col.gameObject.CompareTag("Weapon"))
+        if (health <= 0)
         {
             Destroy(this.gameObject);
         }
     }
+
+    public void damage(float damage)
+    {
+        this.health -= damage;
+    }
+
 }
