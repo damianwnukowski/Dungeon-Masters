@@ -44,7 +44,7 @@ public class Sword : MonoBehaviour
         Debug.Log(col.collider.gameObject.tag);
         if (col.collider.gameObject.CompareTag("Enemy"))
         {
-            simpleEnemyBehaviour s = col.collider.gameObject.GetComponent<simpleEnemyBehaviour>();
+            SimpleEnemyBehaviour s = col.collider.gameObject.GetComponent<SimpleEnemyBehaviour>();
             if (cooldownTimer > 0)
                 s.damage(damage);
         }

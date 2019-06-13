@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D myRigidBody;
     private Vector3 change;
     private Vector3 position;
+    private float health= 100;
     
     // Start is called before the first frame update
     void Start() {     
@@ -27,6 +26,10 @@ public class PlayerMovement : MonoBehaviour
         else
             speedModifier = 1;
         UpdateAnimationAndMove();
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     void UpdateAnimationAndMove()
@@ -48,5 +51,10 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.AngleAxis(180, new Vector3(0, 1));
         else if(change.x > 0)
             transform.rotation = Quaternion.AngleAxis(0, new Vector3(0, 1));
+    }
+
+    public void damage(float damage)
+    {
+        health -= damage;
     }
 }
