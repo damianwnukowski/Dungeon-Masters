@@ -42,7 +42,6 @@ public class simpleEnemyBehaviour : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log(col.gameObject.tag);
         if (col.gameObject.CompareTag("Weapon"))
         {
             Destroy(this.gameObject);
