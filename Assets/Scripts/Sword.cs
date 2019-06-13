@@ -38,4 +38,15 @@ public class Sword : MonoBehaviour
             cooldownTimer = attackSpeed;
         }
     }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log(col.collider.gameObject.tag);
+        if (col.collider.gameObject.CompareTag("Enemy"))
+        {
+            SimpleEnemyBehaviour s = col.collider.gameObject.GetComponent<SimpleEnemyBehaviour>();
+            if (cooldownTimer > 0)
+                s.damage(damage);
+        }
+    }
 }

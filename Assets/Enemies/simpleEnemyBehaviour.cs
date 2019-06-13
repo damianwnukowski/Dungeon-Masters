@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class simpleEnemyBehaviour : MonoBehaviour
+public class SimpleEnemyBehaviour : MonoBehaviour
 {
     private float latestDirectionChangeTime;
     private readonly float directionChangeTime = 3f;
@@ -10,6 +10,7 @@ public class simpleEnemyBehaviour : MonoBehaviour
     private Vector2 movementDirection;
     private Vector2 movementPerSecond;
     private float health = 100;
+    private float dmg = 8;
 
 
     void Start()
@@ -38,13 +39,24 @@ public class simpleEnemyBehaviour : MonoBehaviour
         transform.position = new Vector2(transform.position.x + (movementPerSecond.x * Time.deltaTime),
         transform.position.y + (movementPerSecond.y * Time.deltaTime));
 
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    public void damage(float damage)
+    {
+        health -= damage;
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.CompareTag("Weapon"))
+        Debug.Log(col.collider.gameObject.tag);
+        if (col.collider.gameObject.CompareTag("Player"))
         {
-            Destroy(this.gameObject);
+            PlayerMovement s = col.collider.gameObject.GetComponent<PlayerMovement>();
+            s.damage(dmg);
         }
     }
 }
