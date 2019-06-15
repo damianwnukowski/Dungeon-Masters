@@ -8,7 +8,11 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 change;
     private Vector3 position;
     private float health= 100;
-    
+    public Sprite full;
+    public Sprite half;
+    public Sprite empty;
+
+
     // Start is called before the first frame update
     void Start() {     
         myRigidBody = GetComponent<Rigidbody2D>();
@@ -26,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
         else
             speedModifier = 1;
         UpdateAnimationAndMove();
+
+        UpdateHealth();
+
         if (health <= 0)
         {
             Destroy(this.gameObject);
@@ -38,6 +45,17 @@ public class PlayerMovement : MonoBehaviour
         {
             MoveCharacter();
         }
+    }
+
+    private void UpdateHealth() {
+        GameObject[] healths = GameObject.FindGameObjectsWithTag("Heart");
+
+
+        healths[0].GetComponent<SpriteRenderer>().sprite = health <= 12.5 ? health <= 0 ? empty : half : full;
+        healths[1].GetComponent<SpriteRenderer>().sprite = health <= 37.5 ? health <= 25 ? empty : half : full;
+        healths[2].GetComponent<SpriteRenderer>().sprite = health <= 62.5 ? health <= 50 ? empty : half : full;
+        healths[3].GetComponent<SpriteRenderer>().sprite = health <= 87.5 ? health <= 75  ? empty : half : full;
+
     }
 
     void MoveCharacter()
