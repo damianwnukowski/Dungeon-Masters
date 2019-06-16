@@ -5,6 +5,7 @@ public class Sword : MonoBehaviour
     // Start is called before the first frame update
     public float damage;
     public float attackSpeed;
+    AudioSource audioData;
 
     float cooldownTimer = 0;
 
@@ -13,6 +14,7 @@ public class Sword : MonoBehaviour
     void Start()
     {
         player = GetComponent<PlayerMovement>();
+        audioData = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,6 +38,7 @@ public class Sword : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && cooldownTimer == 0)
         {
             cooldownTimer = attackSpeed;
+            audioData.Play();
         }
     }
 

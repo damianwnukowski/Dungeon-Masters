@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SimpleEnemyBehaviour : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class SimpleEnemyBehaviour : MonoBehaviour
     private Vector2 movementPerSecond;
     private float health = 100;
     private float dmg = 8;
+    private float cooldown = 0;
+    public float attackSpeed = 0.1f;
 
 
     void Start()
@@ -41,6 +45,13 @@ public class SimpleEnemyBehaviour : MonoBehaviour
 
         if (health <= 0)
         {
+            Text txt =  GameObject.FindGameObjectsWithTag("Score")[0].GetComponent<Text>();
+            int tmpscore = int.Parse(txt.text.Trim());
+            tmpscore++;
+            txt.text = tmpscore.ToString("D4");
+
+
+            GameObject.FindGameObjectsWithTag("GameController")[0].GetComponent<SpawnEnemies>().count--;
             Destroy(this.gameObject);
         }
     }
@@ -50,13 +61,18 @@ public class SimpleEnemyBehaviour : MonoBehaviour
         health -= damage;
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionStay2D(Collision2D col)
     {
         Debug.Log(col.collider.gameObject.tag);
-        if (col.collider.gameObject.CompareTag("Player"))
+        if (col.collider.gameObject.CompareTag("Player") && cooldown <= 0)
         {
             PlayerMovement s = col.collider.gameObject.GetComponent<PlayerMovement>();
             s.damage(dmg);
+            cooldown = attackSpeed;
+        }
+        if (cooldown > 0)
+        {
+            cooldown -= Time.deltaTime;
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,6 +11,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 change;
     private Vector3 position;
     private float health= 100;
+
+    AudioSource audioData;
+
     public Sprite full;
     public Sprite half;
     public Sprite empty;
@@ -16,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start() {     
         myRigidBody = GetComponent<Rigidbody2D>();
+        audioData = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -50,11 +57,12 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateHealth() {
         GameObject[] healths = GameObject.FindGameObjectsWithTag("Heart");
 
+        var healths2 = healths.OrderBy(hp => hp.gameObject.transform.position.x).ToArray<GameObject>();
 
-        healths[0].GetComponent<SpriteRenderer>().sprite = health <= 12.5 ? health <= 0 ? empty : half : full;
-        healths[1].GetComponent<SpriteRenderer>().sprite = health <= 37.5 ? health <= 25 ? empty : half : full;
-        healths[2].GetComponent<SpriteRenderer>().sprite = health <= 62.5 ? health <= 50 ? empty : half : full;
-        healths[3].GetComponent<SpriteRenderer>().sprite = health <= 87.5 ? health <= 75  ? empty : half : full;
+        healths2[0].GetComponent<Image>().sprite = health <= 12.5 ? health <= 0 ? empty : half : full;
+        healths2[1].GetComponent<Image>().sprite = health <= 37.5 ? health <= 25 ? empty : half : full;
+        healths2[2].GetComponent<Image>().sprite = health <= 62.5 ? health <= 50 ? empty : half : full;
+        healths2[3].GetComponent<Image>().sprite = health <= 87.5 ? health <= 75  ? empty : half : full;
 
     }
 
@@ -73,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void damage(float damage)
     {
+        audioData.Play();
         health -= damage;
     }
 }
