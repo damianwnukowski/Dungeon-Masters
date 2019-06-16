@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e68693b2979553147b7aafc20703c1fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 80
   attackSpeed: 0.1
 --- !u!114 &380590015
 MonoBehaviour:
@@ -8578,7 +8578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc9c47548f36ce345b958dbd8d4610e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCooldown: 0.05
+  spawnCooldown: 0.2
   count: 0
 --- !u!1 &767166793
 GameObject:

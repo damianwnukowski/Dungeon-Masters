@@ -20,7 +20,7 @@ public class SpawnEnemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cooldownLeft > 0 || count >= 100)
+        if (cooldownLeft > 0 || count >= 500)
         {
             cooldownLeft -= Time.deltaTime;
         }
