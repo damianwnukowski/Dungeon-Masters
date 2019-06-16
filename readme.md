@@ -20,3 +20,7 @@ Gra powstawać będzie według następujących kroków:
 - Dodanie złota w grze, sposobów zdobywania go oraz możliwości leczenia za pieniądze w klaszorze.
 - Sprzedaż projektu dla Google za miliony i wyjazd do ciepłych krajów.
 - Otrzymanie pozytywnej oceny z przedmiotu.
+
+Gameplay:
+
+https://streamable.com/nikdu
